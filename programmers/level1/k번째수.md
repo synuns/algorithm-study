@@ -57,15 +57,7 @@ def solution(array, commands):
     return answer
 ```
 
-> 해설
-
-<br/>
-
-#### **😅개선점**
-
-<br/>
-
-1. `for i in range():` 여기서 어쩌구 했으면 더 좋았겠다
+> for에 필요한 세개의 변수를 모두 받아 list slicing을 통해 매우 쉽게 풀 수 있었던 문제
 
 <br/>
 
@@ -78,16 +70,19 @@ def solution(array, commands):
     return list(map(lambda x:sorted(array[x[0]-1:x[1]])[x[2]-1], commands))
 ```
 
->해설
+> 처음보면 매우 낯설게 느껴지는 답안이다. 그이유는 lambda 때문이다. 다양한 예시를 접하면 어렵지 않게 이해할 수 있다.<br/>
+> 기본적인 형태는 `lambda argument(s): expression`의 형태인데 예를 들면 `(lambda x: x*2)(12)` 이런식의 표현이 가능하다. 위의 경우는 map함수를 이용해서 lambda에 commands의 인자값이 하나씩 입력된다.
 
 <br/>
 
-1. 배운점
-
+1. lambda식을 익히는 pythonic한 한줄 코딩이 가능하다!
 
 ## 📚참고 사이트
 
 <br/>
 
-- **[제목]**<br/>
-사이트 주소
+- **[Python Lambda(w3school)]**<br/>
+https://www.w3schools.com/python/python_lambda.asp
+
+- **[Lambda Functions with Practical Examples in Python]**<br/>
+https://towardsdatascience.com/lambda-functions-with-practical-examples-in-python-45934f3653a8
