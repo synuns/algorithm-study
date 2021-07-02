@@ -1,1 +1,1 @@
-print(3**0)
+print(int(9.9))
