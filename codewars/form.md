@@ -2,14 +2,14 @@
 
 <br/>
 
-## **📝Kata Description**
+## **🤺Kata Description**
 ***
 
 <br/>
 
 <br/>
 
-### **Examples**
+### **👌Examples**
 
 <br/>
 
@@ -24,7 +24,7 @@
 
 <br/>
 
-### **Notes**
+### **📝Notes**
 
 <br/>
 
