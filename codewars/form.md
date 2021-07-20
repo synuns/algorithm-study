@@ -3,7 +3,6 @@
 <br/>
 
 ## **🤺Kata Description**
-***
 
 <br/>
 
