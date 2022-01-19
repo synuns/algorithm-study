@@ -24,45 +24,28 @@
 
 <br/>
 
-<div style="column-count:2; ">
-  <div>
-
 **예제 입력1**
 
 ```
 ```
-
-  </div>
-  <div>
 
 **예제 출력1**
 
 ```
 ```
 
-  </div>
-</div>
-
 <br/>
 
-<div style="column-count:2; ">
-  <div>
 
 **예제 입력2**
 
 ```
 ```
 
-  </div>
-  <div>
-
 **예제 출력2**
 
 ```
 ```
-
-  </div>
-</div>
 
 <br/>
 
