@@ -53,14 +53,22 @@
 
 <br/>
 
-원하는 언어로 문제풀이했으며 **commit**할 때는 반드시 **사용한 언어**를 작성합니다. ex) `git commit -m "python"`
-
 모든 문제 풀이는 각 문제풀이 사이트마다 미리 작성해둔 [form.md](./programmers/form.md) 파일을 참고하여 작성합니다.
 
 해외 사이트 영어 문제들은 모두 영어공부를 위해 영어로 작성했습니다. 작성자의 영어실력에 한계가 느껴질 수 있습니다.
 
-대부분의 문제풀이에 python을 즐겨 사용합니다.
-javascript 코딩테스트 이후 충격을 받아서 javascript로 문제풀이를 시작했습니다. 보통 codewars에서 javascript를 이용합니다.
+문제풀이한 파일과 index 파일을 업데이트하여 함께 커밋합니다.
+커밋 메시지는 다음과 같습니다. 
+
+`git commit -m "[site] problems"`
+
+site는 문제 풀이 사이트 problems는 구분이 가능하도록 문제의 이름을 작성합니다.
+
+ex)
+```
+[baekjoon] 1248, 2529
+[programmers] level2/가장큰수
+```
 
 <br/>
 
