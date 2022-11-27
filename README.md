@@ -57,24 +57,19 @@
 
 해외 사이트 영어 문제들은 모두 영어공부를 위해 영어로 작성했습니다. 작성자의 영어실력에 한계가 느껴질 수 있습니다.
 
-문제풀이한 파일과 index 파일을 업데이트하여 함께 커밋합니다.
-커밋 메시지는 다음과 같습니다. 
+- 문제풀이한 파일과 index 파일이 존재하는 경우 index 파일을 함께 커밋합니다.
+- 문제 하나당 커밋을 한번씩 생성합니다.
+- 커밋 메시지는 다음과 같습니다. 
+  `git commit -m "[site] problems lang"`
+- site는 문제 풀이 사이트, problems는 문제별 구분이 가능하도록 문제의 이름을 작성합니다.
 
-`git commit -m "[site] problems"`
-
-site는 문제 풀이 사이트 problems는 구분이 가능하도록 문제의 이름을 작성합니다.
-
-ex)
+```zsh
+//커밋 메시지 예시
+[baekjoon] 1248 js
+[programmers] level2/가장큰수 js
 ```
-[baekjoon] 1248, 2529
-[programmers] level2/가장큰수
-```
-
-<br/>
 
 ## **알고리즘 트레이닝 사이트**
-
-<br/>
 
 **국내**
 
@@ -83,8 +78,6 @@ https://programmers.co.kr/
 
 - **Baekjoon Online Judge(백준알고리즘)**<br/>
 https://www.acmicpc.net/
-
-<br/>
 
 **해외**
 
