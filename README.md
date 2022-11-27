@@ -5,11 +5,7 @@
 
 알고리즘 트레이닝 사이트에 특성에 따라 작성 형식을 `form.md`에 작성하였습니다. `form.md` 파일은 문제 설명, 직접 작성한 풀이, 다른 사람의 풀이, 해설, 배운점, 참고사이트로 구성하였습니다.
 
-<br/>
-
 ## **repository 구조**
-
-<br/>
 
 **프로그래머스**
 
@@ -20,8 +16,6 @@
 ./programmers/level${num}/${problem_name}.md
 ```
 
-<br/>
-
 **codewars**
 
 ```zsh
@@ -30,9 +24,7 @@
 # codewars kata
 ./codewars/${num}kyu/${kata_name}.md
 ```
-*kata is problem*
-
-<br/>
+*kata is problem
 
 **백준 알고리즘**
 
@@ -46,12 +38,7 @@
 ```
 *백준 알고리즘의 문제들은 구분이 없기 때문에 문제에서 사용하는 알고리즘의 분류에 따라 index.md 파일에 작성합니다.*
 
-
-<br/>
-
 ## **파일과 커밋 형식**
-
-<br/>
 
 모든 문제 풀이는 각 문제풀이 사이트마다 미리 작성해둔 [form.md](./programmers/form.md) 파일을 참고하여 작성합니다.
 
