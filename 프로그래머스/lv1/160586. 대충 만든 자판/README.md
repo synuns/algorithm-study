@@ -1,4 +1,4 @@
-# [unrated] 대충 만든 자판 - 160586 
+# [level 1] 대충 만든 자판 - 160586 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/160586) 
 
@@ -127,3 +127,62 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+### **🧾나의 풀이**
+
+```js
+function solution(keymap, targets) {
+    const result = [];
+    const keys = {};
+    for(key of keymap){
+        for(let i=0; i<key.length; i++){
+            if(!keys[key[i]] || keys[key[i]] > i){
+                keys[key[i]] = i+1;
+            }
+        }
+    }
+    for(let i=0; i<targets.length; i++){
+        result.push(0);
+        for(let j=0; j<targets[i].length; j++){
+            if(targets[i][j] in keys){
+                result[i] += keys[targets[i][j]];
+            } else {
+                result[i] = -1;
+                break;
+            }
+            
+        }
+    }
+    return result;
+}
+```
+
+#### **📝해설**
+
+키의 최소 입력회수에 대한 value를 Object로 만들어주면 해결하기 쉬운 문제.
+
+### **다른 풀이**
+
+```js
+function solution(keymap, targets) {
+    const answer = [];
+    const map = {}
+    for (const items of keymap) {
+        items.split('').map((item, index) => map[item] = (map[item] < index+1 ? map[item] : index+1))
+    }
+    for (const items of targets) {
+        answer.push(items.split('').reduce((cur, item) => cur += map[item], 0) || -1)
+    }
+    return answer;
+}
+```
+
+#### **📝해설**
+
+```js
+for (const items of targets) {
+    answer.push(items.split('').reduce((cur, item) => cur += map[item], 0) || -1)
+}
+```
+
+reduce로 풀이하니까 js스러운 풀이가 되면서 코드가 깔끔해진다. 키를 입력할 수 없는 경우에 대해서는 `||` 연산자로 고급스럽게 풀어냈다.
