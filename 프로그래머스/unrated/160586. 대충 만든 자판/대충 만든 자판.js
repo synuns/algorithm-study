@@ -8,7 +8,6 @@ function solution(keymap, targets) {
             }
         }
     }
-    console.log(keys);
     for(let i=0; i<targets.length; i++){
         result.push(0);
         for(let j=0; j<targets[i].length; j++){
