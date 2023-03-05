@@ -89,3 +89,56 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+#### **📝해설**
+
+```js
+1. 문자열 비교를 위해서 모두 소문자로 통일
+2. 각 문자조합마다 몇개씩인지 세는 Object 자료구조 생성 
+  => 중복 요소들까지 포함해야하기 때문
+  ex) { 'aa' : 3, 'bb' : 2 ...}
+3. 생성된 Object로 교집합, 합집합 계산
+4. 교집합, 합집합으로 값 return
+```
+
+문제 지문따라서 정직하게 풀이하면 쉽게 풀린다.
+
+### **다른 풀이**
+
+```js
+function solution (str1, str2) {
+
+  function explode(text) {
+    const result = [];
+    for (let i = 0; i < text.length - 1; i++) {
+      const node = text.substr(i, 2);
+      if (node.match(/[A-Za-z]{2}/)) {
+        result.push(node.toLowerCase());
+      }
+    }
+    return result;
+  }
+
+  const arr1 = explode(str1);
+  const arr2 = explode(str2);
+  const set = new Set([...arr1, ...arr2]);
+  let union = 0;
+  let intersection = 0;
+
+  set.forEach(item => {
+    const has1 = arr1.filter(x => x === item).length;
+    const has2 = arr2.filter(x => x === item).length;
+    union += Math.max(has1, has2);
+    intersection += Math.min(has1, has2);
+  })
+  return union === 0 ? 65536 : Math.floor(intersection / union * 65536);
+}
+```
+
+#### **📝해설**
+
+`explode` 함수에서 regex를 통햇 특수문자를 걸러내는 방법이 정말 좋음👍
+
+set을 통해서 길이만 뽑아내서 계산하는 부분이 인상적임
+
+=> 하지만, `aaaaaaaaaaaa`와 같은 문자열의 경우에는 같은 계산을 여러번 한다는 비효율적인 부분이 존재함
