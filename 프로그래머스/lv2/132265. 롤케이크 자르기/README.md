@@ -71,3 +71,102 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+## **🧐CODE REVIEW**
+
+### **😫나의 오답 풀이**
+
+```js
+function solution(topping) {
+    let answer = 0;
+    for(let i = 0; i < topping.length; i++) {
+        const chulsu = new Set(topping.slice(0, i));
+        const brother = new Set(topping.slice(i));
+        if(chulsu.size === brother.size) answer++;
+    }
+    return answer;
+}
+```
+
+이렇게 풀면 역시나 시간초과로 효율성 10점밖에 통과하지 못한다
+
+### **🧾나의 풀이**
+
+```js
+function solution(topping) {
+    let answer = 0;
+    const toppingMap = new Map();
+    topping.forEach((val, idx) => {
+        if(toppingMap.has(val)) {
+            const _val = toppingMap.get(val);
+            _val.number++;
+            toppingMap.set(val, _val);
+        } else {
+            toppingMap.set(val, { number: 1 , visited: false });
+        }
+    });
+    let [chulsu, brother] = [0, toppingMap.size];
+    topping.forEach((val, idx) => {
+        const valInfo = toppingMap.get(val);
+        if(!valInfo.visited) {
+            chulsu++;
+            valInfo.visited = true;
+        }
+        valInfo.number--;
+        if(valInfo.number === 0){
+            brother--;
+        }
+        toppingMap.set(val, valInfo);
+        if(chulsu === brother) answer++;
+    })
+    return answer;
+}
+```
+
+#### **📝해설**
+
+1,000,000 길이의 입력을 받을 수 있으니까 시간 복잡도가 O(n^2)가 된다면 해결할 수 없다.
+
+그렇기 때문에 hash를 이용해서 for문 내부에서 중복된 반복이 없도록 풀이했다.
+
+
+
+### **다른 풀이**
+
+```js
+function solution(topping) {
+    const a = new Set()
+    const b = {}
+
+    let answer = 0;
+    let check = 0
+
+    for (let i = 0; i < topping.length; i++) {        
+        if (b[topping[i]]) {
+            b[topping[i]]++
+        } else {
+            b[topping[i]] = 1
+            check++            
+        }
+    }
+
+    for (let i = 0; i < topping.length; i++) {
+        a.add(topping[i])
+        b[topping[i]]--
+
+        if (!b[topping[i]]) check--
+        if (a.size === check) answer++
+    }
+
+    return answer;
+}
+```
+
+#### **📝해설**
+
+Set과 Object 두가지 자료로 풀이한 방법이다.
+Set을 이용해서 개수가 몇개인지 세는 부분이 줄어드니 코드가 정말 깔끔하다.
+
+### **🔖정리**
+
+1. 배운점

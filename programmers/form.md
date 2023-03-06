@@ -13,6 +13,15 @@
 ### **🧾나의 풀이**
 
 ```js
+function solution(topping) {
+    let answer = 0;
+    for(let i = 0; i < topping.length; i++) {
+        const chulsu = new Set(topping.slice(0, i));
+        const brother = new Set(topping.slice(i));
+        if(chulsu.size === brother.size) answer++;
+    }
+    return answer;
+}
 ```
 
 #### **📝해설**
